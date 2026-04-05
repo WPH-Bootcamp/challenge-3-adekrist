@@ -5,12 +5,687 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3 - Landing Page</title>
     <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ['Inter', 'Poppins', 'Segoe UI', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              brand: '#421abc',
+              light: '#fdfdfd',
+              neutral500: '#717680',
+              borderdark: '#181d27',
+              fieldborder: '#252b37',
+              desktopfocus: '#344054',
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <!-- ========== NAVBAR ========== -->
+  <body class="overflow-x-hidden bg-black font-inter text-light">
+    <header
+      id="navbar"
+      class="relative z-50 mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between border-b border-white/[0.12] bg-black px-4 py-6 md:h-[84px] md:bg-black/60 md:px-8 md:py-0 md:backdrop-blur-[40px] lg:px-16 xl:px-[140px]"
+    >
+      <div class="w-[65px] flex-shrink-0 md:w-auto">
+        <a
+          href="#navbar"
+          class="inline-block text-[30px] font-bold leading-9 text-light md:text-[32px] md:leading-none lg:text-[40px] lg:leading-9"
+        >
+          Tech.
+        </a>
+      </div>
 
-    <!-- ========== HERO SECTION ========== -->
+      <nav
+        id="primary-menu"
+        class="invisible fixed inset-0 z-40 flex h-screen w-full -translate-y-2.5 flex-col items-start justify-start gap-7 bg-black px-6 pb-10 pt-[92px] opacity-0 pointer-events-none transition-all duration-300 md:visible md:static md:z-auto md:h-auto md:w-auto md:translate-y-0 md:flex-row md:items-center md:justify-center md:gap-1 md:bg-transparent md:p-0 md:opacity-100 md:pointer-events-auto lg:gap-3"
+      >
+        <a
+          href="#who-we-are"
+          class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
+        >
+          About
+        </a>
+        <a
+          href="#what-we-do-section"
+          class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
+        >
+          Service
+        </a>
+        <a
+          href="#our-work-section"
+          class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
+        >
+          Our Work
+        </a>
+        <a
+          href="#meet-team-section"
+          class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
+        >
+          Team
+        </a>
 
-    <!-- ========== FOOTER ========== -->
+        <a
+          href="#contact-section"
+          class="mt-2 inline-flex h-[46px] w-full items-center justify-center rounded-full bg-brand px-2 text-[16px] font-semibold leading-[30px] text-light md:hidden"
+        >
+          Contact Us
+        </a>
+      </nav>
+
+      <div class="flex items-center">
+        <a
+          href="#contact-section"
+          class="hidden items-center justify-center rounded-full bg-brand px-2 text-light md:inline-flex md:h-[42px] md:w-[136px] md:text-[14px] md:font-semibold md:leading-[30px] lg:h-11 lg:w-40 lg:text-[16px]"
+        >
+          Contact Us
+        </a>
+
+        <button
+          id="navbar-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          class="relative z-50 flex h-6 w-6 items-center justify-center md:hidden"
+        >
+          <span
+            class="absolute h-0.5 w-[18px] -translate-y-1.5 rounded-full bg-light transition-all duration-300"
+          ></span>
+          <span
+            class="absolute h-0.5 w-[18px] translate-y-0 rounded-full bg-light transition-all duration-300"
+          ></span>
+          <span
+            class="absolute h-0.5 w-[18px] translate-y-1.5 rounded-full bg-light transition-all duration-300"
+          ></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="hero"
+        class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-[18px] overflow-visible bg-[linear-gradient(180deg,_#000000_17.55%,_rgba(33,10,94,0.3)_136.21%)] px-5 py-10 md:gap-10 md:px-8 md:pb-0 md:pt-16 lg:min-h-[750px] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:overflow-hidden lg:px-16 lg:py-0 xl:h-[750px] xl:gap-[18px] xl:px-[140px]"
+      >
+        <div
+          class="z-10 flex w-full max-w-full flex-col gap-6 sm:max-w-[354px] md:max-w-full md:gap-8 lg:max-w-[560px] xl:h-[282px] xl:max-w-[687px] xl:justify-between xl:gap-12"
+        >
+          <div
+            class="flex w-full max-w-full flex-col gap-6 sm:max-w-[354px] md:max-w-full md:gap-5 xl:min-h-[186px] xl:max-w-[687px] xl:gap-4"
+          >
+            <h1
+              class="w-full max-w-full text-[40px] font-bold leading-[48px] tracking-[-0.03em] text-light sm:max-w-[354px] md:max-w-full md:text-[52px] md:leading-[1.1] xl:max-w-[687px] xl:text-[58px] xl:leading-[68px]"
+            >
+              Build with the <span><em class="italic">Future.</em></span>
+            </h1>
+
+            <p
+              class="w-full max-w-full text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-neutral500 sm:max-w-[354px] md:max-w-full md:text-[18px] md:leading-[30px] xl:max-w-[687px] xl:text-[20px] xl:leading-[34px] xl:tracking-[0]"
+            >
+              From building sleek websites and mobile apps to integrating AI
+              solutions, we help brands turn ideas into powerful digital
+              experiences that connect, engage, and scale.
+            </p>
+          </div>
+
+          <a
+            href="#contact-section"
+            class="inline-flex h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-2 text-[14px] font-semibold leading-[28px] text-light sm:max-w-[354px] md:max-w-[300px] md:text-[16px] md:leading-none"
+          >
+            Let’s Talk
+          </a>
+        </div>
+
+        <div
+          class="flex w-full max-w-[308.85px] items-start justify-center self-center md:max-w-[520px] lg:relative lg:top-auto lg:left-auto lg:max-w-[460px] xl:absolute xl:left-[708.58px] xl:top-[68.69px] xl:h-[755.31px] xl:w-[590.64px] xl:max-w-none"
+        >
+          <img
+            src="../assets/images/2B.MemegangHandphone.png"
+            alt="Hand holding phone with Tech logo"
+            class="block h-auto w-[306.47px] object-contain md:w-full md:max-w-[520px] lg:max-w-[460px] xl:h-full xl:w-full"
+          />
+        </div>
+      </section>
+
+      <section id="who-we-are" class="w-full bg-black">
+        <div
+          class="mx-auto flex w-full max-w-full flex-col items-center gap-4 px-5 py-10 sm:max-w-[394px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-8 lg:px-[140px] lg:py-20"
+        >
+          <h2
+            class="w-full max-w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light sm:max-w-[354px] md:max-w-[1160px] md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:text-[48px] lg:leading-[56px]"
+          >
+            Who We Are
+          </h2>
+
+          <p
+            class="w-full max-w-full text-center text-[18px] font-semibold leading-[28px] text-neutral500 sm:max-w-[354px] md:max-w-[1160px] md:text-[20px] md:leading-[34px] md:tracking-[-0.02em] lg:text-[24px] lg:leading-[42px]"
+          >
+            We're a group of tech students trained in
+            <span class="text-light"
+              >building real-world digital products.</span
+            >
+            From coding to design, we
+            <span class="text-light"
+              >craft modern solutions for modern problems.</span
+            >
+          </p>
+        </div>
+      </section>
+
+      <section id="what-we-do-section" class="w-full bg-black">
+        <div
+          class="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-6 px-4 py-10 md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-[140px] lg:py-20"
+        >
+          <div
+            class="flex w-full max-w-full flex-col items-center gap-2 md:max-w-[1160px] md:gap-4"
+          >
+            <h2
+              class="w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:text-[48px] lg:leading-[56px]"
+            >
+              What We Do
+            </h2>
+            <p
+              class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[20px] md:leading-[28px] lg:text-[18px] lg:leading-[32px]"
+            >
+              We offer simple tech solutions to help your ideas grow.
+            </p>
+          </div>
+
+          <div
+            class="grid w-full max-w-full grid-cols-2 gap-4 md:max-w-[1160px] md:grid-cols-2 lg:grid-cols-3 lg:gap-5"
+          >
+            <article
+              class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4B.Web-development-icon.png"
+                alt="Web Development Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Web Development
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                Modern websites using HTML, CSS, JavaScript, and frameworks.
+              </p>
+            </article>
+
+            <article
+              class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4C.App-development-icon.png"
+                alt="App Development Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                App Development
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                Mobile and desktop apps tailored for your needs
+              </p>
+            </article>
+
+            <article
+              class="flex h-[248px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4D.AI-Integration-icon.png"
+                alt="AI Integration Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                AI Integration
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                Smart solutions using AI-powered tools and automation.
+              </p>
+            </article>
+
+            <article
+              class="flex h-[248px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4E.UIUX-design-icon.png"
+                alt="UI UX Design Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                UI/UX Design
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                Clean and functional designs for better user experience.
+              </p>
+            </article>
+
+            <article
+              class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4F.LandingPage-design-icon.png"
+                alt="Landing Page Design Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Landing Page Design
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                High-converting landing pages for your product or business.
+              </p>
+            </article>
+
+            <article
+              class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
+            >
+              <img
+                src="../assets/icons/4G.CMS-icon.png"
+                alt="CMS Integration Icon"
+                class="h-12 w-12 object-contain"
+              />
+              <h3
+                class="w-full text-center text-[18px] font-bold leading-[32px] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                CMS Integration
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[28px] lg:leading-[30px]"
+              >
+                Easy-to-manage websites with WordPress or Webflow.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="our-work-section"
+        class="mx-auto flex w-full max-w-full flex-col items-center gap-6 px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-16 lg:py-20 xl:px-[140px]"
+      >
+        <div
+          class="flex w-full max-w-full flex-col items-center gap-2 text-center sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
+        >
+          <h2
+            class="w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:leading-[56px]"
+          >
+            Our Work
+          </h2>
+          <p
+            class="w-full text-center text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-neutral500 md:text-[20px] md:leading-[28px] lg:text-[18px] lg:leading-[32px]"
+          >
+            See what we’ve built with passion and purpose
+          </p>
+        </div>
+
+        <div
+          class="flex w-full flex-col gap-5 md:grid md:max-w-[1160px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-5"
+        >
+          <article
+            class="flex w-full flex-col gap-[13px] md:gap-4 lg:gap-5 lg:max-w-[373px]"
+          >
+            <img
+              src="../assets/images/5B.Portfolio1.png"
+              alt="Portofolio 1"
+              class="block w-full rounded-[16px] object-cover lg:aspect-square"
+            />
+            <h3
+              class="w-full text-[16px] font-bold leading-[30px] tracking-[-0.03em] text-light md:text-[20px] md:leading-[34px]"
+            >
+              Portofolio 1
+            </h3>
+          </article>
+
+          <article
+            class="flex w-full flex-col gap-[13px] md:gap-4 lg:gap-5 lg:max-w-[373px]"
+          >
+            <img
+              src="../assets/images/5C.Portfolio2.png"
+              alt="Portofolio 2"
+              class="block w-full rounded-[16px] object-cover lg:aspect-square"
+            />
+            <h3
+              class="w-full text-[16px] font-bold leading-[30px] tracking-[-0.03em] text-light md:text-[20px] md:leading-[34px]"
+            >
+              Portofolio 2
+            </h3>
+          </article>
+
+          <article
+            class="flex w-full flex-col gap-[13px] md:col-span-2 md:max-w-[420px] md:justify-self-center md:gap-4 lg:col-span-1 lg:max-w-[373px] lg:justify-self-auto lg:gap-5"
+          >
+            <img
+              src="../assets/images/5D.Portfolio3.png"
+              alt="Portofolio 3"
+              class="block w-full rounded-[16px] object-cover lg:aspect-square"
+            />
+            <h3
+              class="w-full text-[16px] font-bold leading-[30px] tracking-[-0.03em] text-light md:text-[20px] md:leading-[34px]"
+            >
+              Portofolio 3
+            </h3>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="meet-team-section"
+        class="mx-auto flex w-full max-w-full flex-col items-center gap-8 bg-black px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-16 lg:py-20 xl:px-[140px]"
+      >
+        <div
+          class="flex w-full max-w-full flex-col items-center gap-2 sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
+        >
+          <h2
+            class="w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:leading-[56px]"
+          >
+            Meet the Team
+          </h2>
+          <p
+            class="w-full text-center text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-neutral500 md:text-[20px] md:leading-[28px] lg:text-[18px] lg:leading-[32px]"
+          >
+            A group of future-ready tech makers.
+          </p>
+        </div>
+
+        <div
+          class="grid w-full max-w-full grid-cols-2 gap-6 sm:max-w-[353px] md:max-w-[1160px] md:gap-x-6 md:gap-y-8 md:justify-items-center lg:grid-cols-4 lg:gap-8"
+        >
+          <article
+            class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
+          >
+            <img
+              src="../assets/images/6B.TeamMember1.png"
+              alt="Jasper Kim"
+              class="h-40 w-40 flex-shrink-0 rounded-full object-contain md:h-auto md:w-full md:max-w-[220px] md:aspect-square md:object-cover"
+            />
+            <div class="flex w-40 flex-col items-center gap-1 md:w-full">
+              <h3
+                class="w-full text-center text-[16px] font-bold leading-[30px] tracking-[-0.02em] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Jasper Kim
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[30px] md:tracking-[-0.03em]"
+              >
+                Project Manager
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
+          >
+            <img
+              src="../assets/images/6C.TeamMember2.png"
+              alt="Alex Jonathan"
+              class="h-40 w-40 flex-shrink-0 rounded-full object-contain md:h-auto md:w-full md:max-w-[220px] md:aspect-square md:object-cover"
+            />
+            <div class="flex w-40 flex-col items-center gap-1 md:w-full">
+              <h3
+                class="w-full text-center text-[16px] font-bold leading-[30px] tracking-[-0.02em] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Alex Jonathan
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[30px] md:tracking-[-0.03em]"
+              >
+                Full-stack Developer
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
+          >
+            <img
+              src="../assets/images/6D.TeamMember3.png"
+              alt="Mario Lopez"
+              class="h-40 w-40 flex-shrink-0 rounded-full object-contain md:h-auto md:w-full md:max-w-[220px] md:aspect-square md:object-cover"
+            />
+            <div class="flex w-40 flex-col items-center gap-1 md:w-full">
+              <h3
+                class="w-full text-center text-[16px] font-bold leading-[30px] tracking-[-0.02em] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Mario Lopez
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[30px] md:tracking-[-0.03em]"
+              >
+                UI/UX Designer
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
+          >
+            <img
+              src="../assets/images/6E.TeamMember4.png"
+              alt="Jasper Kim"
+              class="h-40 w-40 flex-shrink-0 rounded-full object-contain md:h-auto md:w-full md:max-w-[220px] md:aspect-square md:object-cover"
+            />
+            <div class="flex w-40 flex-col items-center gap-1 md:w-full">
+              <h3
+                class="w-full text-center text-[16px] font-bold leading-[30px] tracking-[-0.02em] text-light md:text-[20px] md:leading-[34px] md:tracking-[-0.03em]"
+              >
+                Jasper Kim
+              </h3>
+              <p
+                class="w-full text-center text-[14px] font-normal leading-[28px] text-neutral500 md:text-[16px] md:leading-[30px] md:tracking-[-0.03em]"
+              >
+                Data Scientist
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="contact-section"
+        class="mx-auto flex w-full max-w-full flex-col items-center gap-6 bg-black px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:pb-24 md:pt-[72px] lg:gap-16 lg:px-16 lg:pb-[120px] lg:pt-20 xl:px-[140px]"
+      >
+        <div
+          class="flex w-full max-w-full flex-col items-center gap-2 sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
+        >
+          <h2
+            class="w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:leading-[56px]"
+          >
+            Let’s Collaborate
+          </h2>
+          <p
+            class="w-full text-center text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-neutral500 md:text-[20px] md:leading-[28px] lg:text-[18px] lg:leading-[32px]"
+          >
+            Need a tech team? We're ready to help
+          </p>
+        </div>
+
+        <div class="w-full max-w-full sm:max-w-[353px] md:max-w-[592px]">
+          <form
+            action="#"
+            method="post"
+            class="flex w-full flex-col gap-8 md:gap-10"
+          >
+            <div class="flex w-full flex-col gap-4 md:gap-5">
+              <div class="flex min-h-[82px] w-full flex-col gap-1.5">
+                <label
+                  for="name"
+                  class="text-[14px] font-bold leading-7 text-light"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="h-12 w-full rounded-[16px] border border-fieldborder bg-black px-4 py-2 text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-light outline-none placeholder:text-neutral500 focus:border-brand md:leading-8 lg:focus:border-desktopfocus"
+                />
+              </div>
+
+              <div class="flex min-h-[82px] w-full flex-col gap-1.5">
+                <label
+                  for="email"
+                  class="text-[14px] font-bold leading-7 text-light"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  class="h-12 w-full rounded-[16px] border border-fieldborder bg-black px-4 py-2 text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-light outline-none placeholder:text-neutral500 focus:border-brand md:leading-8 lg:focus:border-desktopfocus"
+                />
+              </div>
+
+              <div class="flex min-h-[168px] w-full flex-col gap-1.5">
+                <label
+                  for="message"
+                  class="text-[14px] font-bold leading-7 text-light"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message"
+                  class="h-[134px] w-full resize-none overflow-hidden rounded-[16px] border border-fieldborder bg-black px-4 py-2 text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-light outline-none placeholder:text-neutral500 focus:border-brand md:leading-8 lg:focus:border-desktopfocus"
+                ></textarea>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="h-11 w-full rounded-full bg-brand px-2 text-center text-[16px] font-bold leading-[28px] text-light transition hover:brightness-110 md:h-12 md:font-semibold md:leading-[30px]"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="footer"
+      class="mx-auto flex w-full max-w-[1440px] items-center justify-center gap-2 border-t border-borderdark px-2 py-6 text-center text-[12px] font-normal leading-6 tracking-[-0.03em] text-neutral500 md:px-8 md:text-[16px] lg:px-2"
+    >
+      <p>© 2025 Web Programming Hack. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const navbarToggle = document.getElementById('navbar-toggle');
+      const primaryMenu = document.getElementById('primary-menu');
+      const menuLinks = primaryMenu.querySelectorAll('a');
+      const menuLines = navbarToggle.querySelectorAll('span');
+
+      function openMenu() {
+        primaryMenu.classList.remove(
+          'invisible',
+          'opacity-0',
+          'pointer-events-none',
+          '-translate-y-2.5'
+        );
+        primaryMenu.classList.add(
+          'visible',
+          'opacity-100',
+          'pointer-events-auto',
+          'translate-y-0'
+        );
+
+        menuLines[0].classList.remove('-translate-y-1.5');
+        menuLines[0].classList.add('translate-y-0', 'rotate-45');
+
+        menuLines[1].classList.add('opacity-0');
+
+        menuLines[2].classList.remove('translate-y-1.5');
+        menuLines[2].classList.add('translate-y-0', '-rotate-45');
+
+        navbarToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function closeMenu() {
+        primaryMenu.classList.add(
+          'invisible',
+          'opacity-0',
+          'pointer-events-none',
+          '-translate-y-2.5'
+        );
+        primaryMenu.classList.remove(
+          'visible',
+          'opacity-100',
+          'pointer-events-auto',
+          'translate-y-0'
+        );
+
+        menuLines[0].classList.add('-translate-y-1.5');
+        menuLines[0].classList.remove('translate-y-0', 'rotate-45');
+
+        menuLines[1].classList.remove('opacity-0');
+
+        menuLines[2].classList.add('translate-y-1.5');
+        menuLines[2].classList.remove('translate-y-0', '-rotate-45');
+
+        navbarToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      function toggleMenu() {
+        const isExpanded =
+          navbarToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      navbarToggle.addEventListener('click', toggleMenu);
+
+      menuLinks.forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
+      });
+    </script>
   </body>
 </html>
