@@ -1,18 +1,28 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Pengaturan dasar dokumen HTML -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang tampil di tab browser -->
     <title>Assignment 3 - Landing Page</title>
+
+    <!-- File hasil build -->
     <link href="./output.css" rel="stylesheet" />
+
+    <!-- CDN Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // Konfigurasi tambahan untuk Tailwind CSS
       tailwind.config = {
         theme: {
           extend: {
+            // Menambahkan font family kustom
             fontFamily: {
               inter: ['Inter', 'Poppins', 'Segoe UI', 'Arial', 'sans-serif'],
             },
+            // Menambahkan warna kustom yang dipakai di halaman
             colors: {
               brand: '#421abc',
               light: '#fdfdfd',
@@ -26,18 +36,23 @@
       };
     </script>
 
+    <!-- Optimasi koneksi ke Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Mengimpor font Inter dari Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="overflow-x-hidden bg-black font-inter text-light">
+    <!-- Header / Navbar utama -->
     <header
       id="navbar"
       class="relative z-50 mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between border-b border-white/[0.12] bg-black px-4 py-6 md:h-[84px] md:bg-black/60 md:px-8 md:py-0 md:backdrop-blur-[40px] lg:px-16 xl:px-[140px]"
     >
+      <!-- Logo / nama brand -->
       <div class="w-[65px] flex-shrink-0 md:w-auto">
         <a
           href="#navbar"
@@ -47,28 +62,36 @@
         </a>
       </div>
 
+      <!-- Navigasi utama -->
       <nav
         id="primary-menu"
         class="invisible fixed inset-0 z-40 flex h-screen w-full -translate-y-2.5 flex-col items-start justify-start gap-7 bg-black px-6 pb-10 pt-[92px] opacity-0 pointer-events-none transition-all duration-300 md:visible md:static md:z-auto md:h-auto md:w-auto md:translate-y-0 md:flex-row md:items-center md:justify-center md:gap-1 md:bg-transparent md:p-0 md:opacity-100 md:pointer-events-auto lg:gap-3"
       >
+        <!-- Link menuju section About -->
         <a
           href="#who-we-are"
           class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
         >
           About
         </a>
+
+        <!-- Link menuju section Service -->
         <a
           href="#what-we-do-section"
           class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
         >
           Service
         </a>
+
+        <!-- Link menuju section Our Work -->
         <a
           href="#our-work-section"
           class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
         >
           Our Work
         </a>
+
+        <!-- Link menuju section Team -->
         <a
           href="#meet-team-section"
           class="p-0 text-[16px] font-normal leading-6 text-light md:px-[10px] md:text-[14px] md:leading-8 lg:px-[14px] lg:text-[16px] lg:leading-9"
@@ -76,6 +99,7 @@
           Team
         </a>
 
+        <!-- Tombol Contact Us khusus tampilan mobile -->
         <a
           href="#contact-section"
           class="mt-2 inline-flex h-[46px] w-full items-center justify-center rounded-full bg-brand px-2 text-[16px] font-semibold leading-[30px] text-light md:hidden"
@@ -84,7 +108,9 @@
         </a>
       </nav>
 
+      <!-- Area kanan navbar: tombol contact desktop + hamburger menu mobile -->
       <div class="flex items-center">
+        <!-- Tombol Contact Us untuk tablet/desktop -->
         <a
           href="#contact-section"
           class="hidden items-center justify-center rounded-full bg-brand px-2 text-light md:inline-flex md:h-[42px] md:w-[136px] md:text-[14px] md:font-semibold md:leading-[30px] lg:h-11 lg:w-40 lg:text-[16px]"
@@ -92,6 +118,7 @@
           Contact Us
         </a>
 
+        <!-- Tombol hamburger untuk membuka menu di mobile -->
         <button
           id="navbar-toggle"
           type="button"
@@ -100,12 +127,17 @@
           aria-controls="primary-menu"
           class="relative z-50 flex h-6 w-6 items-center justify-center md:hidden"
         >
+          <!-- Garis 1 hamburger -->
           <span
             class="absolute h-0.5 w-[18px] -translate-y-1.5 rounded-full bg-light transition-all duration-300"
           ></span>
+
+          <!-- Garis 2 hamburger -->
           <span
             class="absolute h-0.5 w-[18px] translate-y-0 rounded-full bg-light transition-all duration-300"
           ></span>
+
+          <!-- Garis 3 hamburger -->
           <span
             class="absolute h-0.5 w-[18px] translate-y-1.5 rounded-full bg-light transition-all duration-300"
           ></span>
@@ -114,22 +146,26 @@
     </header>
 
     <main>
+      <!-- Section Hero / bagian pembuka utama -->
       <section
         id="hero"
-        class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-[18px] overflow-visible bg-[linear-gradient(180deg,_#000000_17.55%,_rgba(33,10,94,0.3)_136.21%)] px-5 py-10 md:gap-10 md:px-8 md:pb-0 md:pt-16 lg:min-h-[750px] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:overflow-hidden lg:px-16 lg:py-0 xl:h-[750px] xl:gap-[18px] xl:px-[140px]"
+        class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-[18px] overflow-visible bg-[linear-gradient(180deg,_#000000_17.55%,_rgba(33,10,94,0.3)_136.21%)] px-5 pt-10 pb-0 md:gap-10 md:px-8 md:pb-0 md:pt-16 lg:min-h-[750px] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:overflow-hidden lg:px-16 lg:py-0 xl:h-[750px] xl:gap-[18px] xl:px-[140px]"
       >
+        <!-- Konten teks hero -->
         <div
           class="z-10 flex w-full max-w-full flex-col gap-6 sm:max-w-[354px] md:max-w-full md:gap-8 lg:max-w-[560px] xl:h-[282px] xl:max-w-[687px] xl:justify-between xl:gap-12"
         >
           <div
             class="flex w-full max-w-full flex-col gap-6 sm:max-w-[354px] md:max-w-full md:gap-5 xl:min-h-[186px] xl:max-w-[687px] xl:gap-4"
           >
+            <!-- Judul utama hero -->
             <h1
               class="w-full max-w-full text-[40px] font-bold leading-[48px] tracking-[-0.03em] text-light sm:max-w-[354px] md:max-w-full md:text-[52px] md:leading-[1.1] xl:max-w-[687px] xl:text-[58px] xl:leading-[68px]"
             >
               Build with the <span><em class="italic">Future.</em></span>
             </h1>
 
+            <!-- Deskripsi singkat hero -->
             <p
               class="w-full max-w-full text-[16px] font-normal leading-[30px] tracking-[-0.03em] text-neutral500 sm:max-w-[354px] md:max-w-full md:text-[18px] md:leading-[30px] xl:max-w-[687px] xl:text-[20px] xl:leading-[34px] xl:tracking-[0]"
             >
@@ -139,6 +175,7 @@
             </p>
           </div>
 
+          <!-- Tombol Let's Talk -->
           <a
             href="#contact-section"
             class="inline-flex h-12 w-full max-w-full items-center justify-center rounded-full bg-brand px-2 text-[14px] font-semibold leading-[28px] text-light sm:max-w-[354px] md:max-w-[300px] md:text-[16px] md:leading-none"
@@ -147,8 +184,9 @@
           </a>
         </div>
 
+        <!-- Gambar hero -->
         <div
-          class="flex w-full max-w-[308.85px] items-start justify-center self-center md:max-w-[520px] lg:relative lg:top-auto lg:left-auto lg:max-w-[460px] xl:absolute xl:left-[708.58px] xl:top-[68.69px] xl:h-[755.31px] xl:w-[590.64px] xl:max-w-none"
+          class="flex w-full max-w-[308.85px] items-end justify-center self-center md:max-w-[520px] lg:relative lg:top-auto lg:left-auto lg:self-end lg:max-w-[460px] xl:absolute xl:left-[708.58px] xl:bottom-0 xl:top-auto xl:h-[755.31px] xl:w-[590.64px] xl:max-w-none"
         >
           <img
             src="../assets/images/2B.MemegangHandphone.png"
@@ -158,16 +196,19 @@
         </div>
       </section>
 
+      <!-- Section Who We Are -->
       <section id="who-we-are" class="w-full bg-black">
         <div
           class="mx-auto flex w-full max-w-full flex-col items-center gap-4 px-5 py-10 sm:max-w-[394px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-8 lg:px-[140px] lg:py-20"
         >
+          <!-- Judul section -->
           <h2
             class="w-full max-w-full text-center text-[28px] font-bold leading-[38px] tracking-[-0.02em] text-light sm:max-w-[354px] md:max-w-[1160px] md:text-[40px] md:leading-[48px] md:tracking-[-0.03em] lg:text-[48px] lg:leading-[56px]"
           >
             Who We Are
           </h2>
 
+          <!-- Deskripsi section -->
           <p
             class="w-full max-w-full text-center text-[18px] font-semibold leading-[28px] text-neutral500 sm:max-w-[354px] md:max-w-[1160px] md:text-[20px] md:leading-[34px] md:tracking-[-0.02em] lg:text-[24px] lg:leading-[42px]"
           >
@@ -183,10 +224,12 @@
         </div>
       </section>
 
+      <!-- Section layanan / What We Do -->
       <section id="what-we-do-section" class="w-full bg-black">
         <div
           class="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-6 px-4 py-10 md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-[140px] lg:py-20"
         >
+          <!-- Header section -->
           <div
             class="flex w-full max-w-full flex-col items-center gap-2 md:max-w-[1160px] md:gap-4"
           >
@@ -202,9 +245,11 @@
             </p>
           </div>
 
+          <!-- Grid daftar layanan -->
           <div
             class="grid w-full max-w-full grid-cols-2 gap-4 md:max-w-[1160px] md:grid-cols-2 lg:grid-cols-3 lg:gap-5"
           >
+            <!-- Kartu layanan: Web Development -->
             <article
               class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -225,6 +270,7 @@
               </p>
             </article>
 
+            <!-- Kartu layanan: App Development -->
             <article
               class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -245,6 +291,7 @@
               </p>
             </article>
 
+            <!-- Kartu layanan: AI Integration -->
             <article
               class="flex h-[248px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -265,6 +312,7 @@
               </p>
             </article>
 
+            <!-- Kartu layanan: UI/UX Design -->
             <article
               class="flex h-[248px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -285,6 +333,7 @@
               </p>
             </article>
 
+            <!-- Kartu layanan: Landing Page Design -->
             <article
               class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -305,6 +354,7 @@
               </p>
             </article>
 
+            <!-- Kartu layanan: CMS Integration -->
             <article
               class="flex h-[280px] min-w-0 flex-col items-center justify-start gap-5 rounded-[12px] border border-borderdark bg-transparent px-4 py-4 text-center md:h-auto md:min-h-[210px] md:px-[18px] md:py-6 lg:min-h-[214px] lg:px-[22px] lg:py-7"
             >
@@ -328,10 +378,12 @@
         </div>
       </section>
 
+      <!-- Section portfolio / hasil karya -->
       <section
         id="our-work-section"
         class="mx-auto flex w-full max-w-full flex-col items-center gap-6 px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-16 lg:py-20 xl:px-[140px]"
       >
+        <!-- Header section -->
         <div
           class="flex w-full max-w-full flex-col items-center gap-2 text-center sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
         >
@@ -347,9 +399,11 @@
           </p>
         </div>
 
+        <!-- Daftar portfolio -->
         <div
           class="flex w-full flex-col gap-5 md:grid md:max-w-[1160px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-5"
         >
+          <!-- Item portfolio 1 -->
           <article
             class="flex w-full flex-col gap-[13px] md:gap-4 lg:gap-5 lg:max-w-[373px]"
           >
@@ -365,6 +419,7 @@
             </h3>
           </article>
 
+          <!-- Item portfolio 2 -->
           <article
             class="flex w-full flex-col gap-[13px] md:gap-4 lg:gap-5 lg:max-w-[373px]"
           >
@@ -380,6 +435,7 @@
             </h3>
           </article>
 
+          <!-- Item portfolio 3 -->
           <article
             class="flex w-full flex-col gap-[13px] md:col-span-2 md:max-w-[420px] md:justify-self-center md:gap-4 lg:col-span-1 lg:max-w-[373px] lg:justify-self-auto lg:gap-5"
           >
@@ -397,10 +453,12 @@
         </div>
       </section>
 
+      <!-- Section tim -->
       <section
         id="meet-team-section"
         class="mx-auto flex w-full max-w-full flex-col items-center gap-8 bg-black px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:py-[72px] lg:gap-16 lg:px-16 lg:py-20 xl:px-[140px]"
       >
+        <!-- Header section -->
         <div
           class="flex w-full max-w-full flex-col items-center gap-2 sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
         >
@@ -416,9 +474,11 @@
           </p>
         </div>
 
+        <!-- Grid anggota tim -->
         <div
           class="grid w-full max-w-full grid-cols-2 gap-6 sm:max-w-[353px] md:max-w-[1160px] md:gap-x-6 md:gap-y-8 md:justify-items-center lg:grid-cols-4 lg:gap-8"
         >
+          <!-- Anggota tim 1 -->
           <article
             class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
           >
@@ -441,6 +501,7 @@
             </div>
           </article>
 
+          <!-- Anggota tim 2 -->
           <article
             class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
           >
@@ -463,6 +524,7 @@
             </div>
           </article>
 
+          <!-- Anggota tim 3 -->
           <article
             class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
           >
@@ -485,6 +547,7 @@
             </div>
           </article>
 
+          <!-- Anggota tim 4 -->
           <article
             class="flex w-40 flex-col items-center gap-3 md:w-full md:max-w-[220px] md:gap-4"
           >
@@ -509,10 +572,12 @@
         </div>
       </section>
 
+      <!-- Section kontak -->
       <section
         id="contact-section"
         class="mx-auto flex w-full max-w-full flex-col items-center gap-6 bg-black px-5 py-10 sm:max-w-[393px] md:max-w-[1440px] md:gap-12 md:px-8 md:pb-24 md:pt-[72px] lg:gap-16 lg:px-16 lg:pb-[120px] lg:pt-20 xl:px-[140px]"
       >
+        <!-- Header section -->
         <div
           class="flex w-full max-w-full flex-col items-center gap-2 sm:max-w-[353px] md:max-w-[1160px] md:gap-4"
         >
@@ -528,13 +593,16 @@
           </p>
         </div>
 
+        <!-- Formulir kontak -->
         <div class="w-full max-w-full sm:max-w-[353px] md:max-w-[592px]">
           <form
             action="#"
             method="post"
             class="flex w-full flex-col gap-8 md:gap-10"
           >
+            <!-- Kelompok input form -->
             <div class="flex w-full flex-col gap-4 md:gap-5">
+              <!-- Input nama -->
               <div class="flex min-h-[82px] w-full flex-col gap-1.5">
                 <label
                   for="name"
@@ -551,6 +619,7 @@
                 />
               </div>
 
+              <!-- Input email -->
               <div class="flex min-h-[82px] w-full flex-col gap-1.5">
                 <label
                   for="email"
@@ -567,6 +636,7 @@
                 />
               </div>
 
+              <!-- Input pesan -->
               <div class="flex min-h-[168px] w-full flex-col gap-1.5">
                 <label
                   for="message"
@@ -583,6 +653,7 @@
               </div>
             </div>
 
+            <!-- Tombol submit form -->
             <button
               type="submit"
               class="h-11 w-full rounded-full bg-brand px-2 text-center text-[16px] font-bold leading-[28px] text-light transition hover:brightness-110 md:h-12 md:font-semibold md:leading-[30px]"
@@ -594,6 +665,7 @@
       </section>
     </main>
 
+    <!-- Footer halaman -->
     <footer
       id="footer"
       class="mx-auto flex w-full max-w-[1440px] items-center justify-center gap-2 border-t border-borderdark px-2 py-6 text-center text-[12px] font-normal leading-6 tracking-[-0.03em] text-neutral500 md:px-8 md:text-[16px] lg:px-2"
@@ -602,11 +674,13 @@
     </footer>
 
     <script>
+      // Mengambil elemen-elemen yang dibutuhkan untuk interaksi navbar mobile
       const navbarToggle = document.getElementById('navbar-toggle');
       const primaryMenu = document.getElementById('primary-menu');
       const menuLinks = primaryMenu.querySelectorAll('a');
       const menuLines = navbarToggle.querySelectorAll('span');
 
+      // Fungsi untuk membuka menu mobile
       function openMenu() {
         primaryMenu.classList.remove(
           'invisible',
@@ -621,6 +695,7 @@
           'translate-y-0'
         );
 
+        // Animasi garis hamburger menjadi ikon X
         menuLines[0].classList.remove('-translate-y-1.5');
         menuLines[0].classList.add('translate-y-0', 'rotate-45');
 
@@ -629,10 +704,12 @@
         menuLines[2].classList.remove('translate-y-1.5');
         menuLines[2].classList.add('translate-y-0', '-rotate-45');
 
+        // Update atribut aksesibilitas dan cegah scroll body
         navbarToggle.setAttribute('aria-expanded', 'true');
         document.body.classList.add('overflow-hidden');
       }
 
+      // Fungsi untuk menutup menu mobile
       function closeMenu() {
         primaryMenu.classList.add(
           'invisible',
@@ -647,6 +724,7 @@
           'translate-y-0'
         );
 
+        // Mengembalikan ikon X menjadi hamburger
         menuLines[0].classList.add('-translate-y-1.5');
         menuLines[0].classList.remove('translate-y-0', 'rotate-45');
 
@@ -655,10 +733,12 @@
         menuLines[2].classList.add('translate-y-1.5');
         menuLines[2].classList.remove('translate-y-0', '-rotate-45');
 
+        // Update atribut aksesibilitas dan aktifkan kembali scroll body
         navbarToggle.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('overflow-hidden');
       }
 
+      // Fungsi toggle untuk membuka atau menutup menu
       function toggleMenu() {
         const isExpanded =
           navbarToggle.getAttribute('aria-expanded') === 'true';
@@ -669,18 +749,22 @@
         }
       }
 
+      // Event klik tombol hamburger
       navbarToggle.addEventListener('click', toggleMenu);
 
+      // Saat link menu diklik, menu otomatis ditutup
       menuLinks.forEach((link) => {
         link.addEventListener('click', closeMenu);
       });
 
+      // Jika layar berubah ke ukuran desktop, menu mobile ditutup
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
           closeMenu();
         }
       });
 
+      // Jika tombol Escape ditekan, menu ditutup
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
           closeMenu();
